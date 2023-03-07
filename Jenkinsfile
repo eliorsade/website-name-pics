@@ -61,6 +61,7 @@ pipeline {
             echo 'Run postgres container'
 			sh '''
 				sudo docker run --name postgres --network website -p 5432:5432 -d postgres:${BUILD_NUMBER}
+				sudo docker logs postgres
 			'''
          }
       }
@@ -68,6 +69,7 @@ pipeline {
          steps {
             echo 'Run postgres container'
 			sh '''
+			        sleep 5
 				sudo docker run --name website --network website -p 3001:3001 website:${BUILD_NUMBER}
 			'''
          }
