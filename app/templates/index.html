@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Randon Animals Pics </title>
+    <script>
+      function onSubmit() {
+    	  var name = document.getElementById("name").value;
+          if (name == "") {
+   	 	 alert("Please enter a name");
+         }
+          else {
+    	 	 window.location.href = "/picture?name=" + encodeURIComponent(name);
+               }
+          }
+
+    </script>
+  </head>
+  <body>
+    <h2>Welcome To Random Animals Pictures</h2> 
+    <h4>Insert your name</h4>
+    <form name="myForm" method="POST" onsubmit="return validateForm();" action="/">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+      <button type="submit">Submit</button>
+     </br>
+     </br>
+        <button type="button" onclick="window.location.href='/users';">User List</button>
+</form>
+</body>
+</html>
