@@ -23,7 +23,7 @@ pipeline {
          steps {
             echo 'Build process for app'            
             sh '''
-                docker build -t="website:${BUILD_NUMBER}" -f Dockerfile_app .
+                docker build -t="website:${BUILD_NUMBER}" -f Dockerfile_app . --network=host
             '''
          }
       }
