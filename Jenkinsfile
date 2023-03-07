@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'canada'
+    label 'Slave_1'
 }
    stages {
       stage('Clone Sources') {
