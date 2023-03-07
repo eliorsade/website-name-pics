@@ -13,7 +13,7 @@ pipeline {
          steps {
             echo 'Build process for postgres'            
             sh '''
-                docker build -t="postgres:${BUILD_NUMBER}" -f Dockefile_psql .
+                docker build -t="postgres:${BUILD_NUMBER}" -f Dockerfile_psql .
             '''
          }
       }
@@ -23,7 +23,7 @@ pipeline {
          steps {
             echo 'Build process for app'            
             sh '''
-                docker build -t="website:${BUILD_NUMBER}" -f Dockefile_app .
+                docker build -t="website:${BUILD_NUMBER}" -f Dockerfile_app .
             '''
          }
       }
