@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Users</title>
+</head>
+<body>
+    <h1>User's List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for user in users %}
+<tr>    
+    <td>{{ user[0] }}</td>
+    <td>{{ user[1] }}</td>
+    <td>{{ user[2] }}</td>
+</tr>
+{% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <div class="button-container">
+        <button type="button" onclick="window.location.href='/';">Go Back</button>
+    </div>
+</body>
+</html>
