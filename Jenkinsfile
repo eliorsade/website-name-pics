@@ -13,7 +13,7 @@ pipeline {
          steps {
             echo 'Build process for postgres'            
             sh '''
-                docker build -t="postgres:${BUILD_NUMBER}" -f Dockerfile_psql .
+                docker build -t="postgres:${BUILD_NUMBER}" -f Dockerfile_psql . --network=host
             '''
          }
       }
